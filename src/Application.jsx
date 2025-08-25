@@ -1,8 +1,7 @@
 import Nullstack from 'nullstack'
 
-import DynamicModalExample from './DynamicModal'
-import EmbededModalExample from './EmbededModal'
 import ModalPortal from './ModalPortal'
+import Page from './Page'
 
 class Application extends Nullstack {
 
@@ -14,8 +13,7 @@ class Application extends Nullstack {
     return (
       <body>
         <ModalPortal key="modal" />
-        <EmbededModalExample route="/embeded" />
-        <DynamicModalExample route="/dynamic" />
+        <Page route="/" />
       </body>
     )
   }

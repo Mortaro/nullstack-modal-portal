@@ -1,14 +1,17 @@
 import Nullstack from 'nullstack'
 
-class DynamicModalExample extends Nullstack {
+import Modal from './Modal'
+
+class Page extends Nullstack {
 
   openModal( { instances }) {
-    instances.modal.open({ content: 'Hello' })
+    instances.modal.open({ id: 'example' })
   }
 
   render() {
     return (
       <section>
+        <Modal id="example"> Example Modal </Modal>
         <button onclick={this.openModal}> open modal </button>
       </section>
     )
@@ -16,4 +19,4 @@ class DynamicModalExample extends Nullstack {
 
 }
 
-export default DynamicModalExample
+export default Page

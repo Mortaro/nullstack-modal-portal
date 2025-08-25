@@ -3,24 +3,22 @@ import Nullstack from 'nullstack'
 
 class ModalPortal extends Nullstack {
 
-  visible = false
+  currentId = null
+  contents = {}
 
-  open({ content }) {
-    if (content) {
-      this.content = content
-    }
-    this.visible = true
+  open({ id }) {
+    this.currentId = id
   }
 
   close() {
-    this.visible = false
+    this.currentId = null
   }
 
   render() {
-    if (!this.visible) return false
+    if (!this.currentId) return false
     return (
       <div id="modal">
-        <div>{this.content}</div>
+        <div>{this.contents[this.currentId]}</div>
         <button onclick={this.close}>X</button>
       </div>
     )
